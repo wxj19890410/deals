@@ -7,7 +7,28 @@ Page({
     motto: 'Hello World',
     userInfo: {},
     hasUserInfo: false,
-    canIUse: wx.canIUse('button.open-type.getUserInfo')
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),
+    userListInfo: [{
+      icon: '../../images/iconfont-icontuan.png',
+      text: '今日计划',
+      isunread: true,
+      unreadNum: 1
+    }, {
+      icon: '../../images/iconfont-dingdan.png',
+      text: '今日审核',
+      isunread: true,
+      unreadNum: 2
+    }, {
+      icon: '../../images/iconfont-card.png',
+      text: '进行中的',
+      isunread: false,
+      unreadNum: 2
+      }, {
+        icon: '../../images/iconfont-card.png',
+        text: '审核中的',
+        isunread: false,
+        unreadNum: 2
+      }]
   },
   //事件处理函数
   bindViewTap: function() {

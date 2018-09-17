@@ -13,7 +13,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.2.5",
 	"appid": "wx113aa53c24844ed6",
-	"projectname": "deals",
+	"projectname": "deal",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},

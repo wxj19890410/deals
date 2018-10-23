@@ -75,16 +75,22 @@ Page({
     },
     formSubmit: function (e) {
         console.log(222)
-        wx.request({
-          url: 'http://127.0.0.1:8083/user/loadInfo', //仅为示例，并非真实的接口地址
-          data: {
-            id: 1
-          },
-          header: {
-            'content-type': 'application/json' // 默认值
-          },
+        wx.chooseImage({
           success(res) {
-            console.log(res.data)
+            console.log(res)
+            const tempFilePaths = res.tempFilePaths
+            wx.uploadFile({
+              url: '127.0.0.1:8083/user/upload', //仅为示例，非真实的接口地址
+              filePath: tempFilePaths[0],
+              name: 'file',
+              formData: {
+                'user': 'test'
+              },
+              success(res) {
+                const data = res.data
+                //do something
+              }
+            })
           }
         })
         console.log('form发生了submit事件，携带数据为：', e.detail.value)
